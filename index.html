@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>HDT online</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="style.css" />
+	<link rel="shortcut icon" href="favicon.ico">
+</head>
+<body>
+	<div id="menu">
+		<a href="">Home</a> | <a href="https://github.com/mhausenblas/hdt-online/wiki">About</a>
+	</div>
+	<div id="top">
+		<h1>HDT online</h1>
+		<p>
+			A simple, yet useful <a href="http://www.rdfhdt.org/" title="rdfhdt">HDT</a> converter.
+		</p>
+	</div>
+	
+	<div id="main">
+		<div class="main-entry">
+			<button id="convert">Convert</button>
+			<input type="url" id="inputdoc" size="50" value="http://dbpedia.org/data/Galway.ntriples" />
+			<span>from</span>
+			<select id="inputformat">
+				<option value="rdfturtle">RDF/Turtle</option>
+			</select>
+			<span>to</span>
+			<select id="outputformat">
+				<option value="hdt">HDT</option>
+			</select>
+			
+		</div>
+		<div class="main-entry" id="results">
+			<div id="out"><img src="img/busy.gif" alt="busy" /></div>
+		</div>
+	</div>
+	
+	<div id="info">
+		Contact: <a href="http://github.com/mhausenblas/" target="_blank">Michael Hausenblas</a> |
+		Last update: 2012-09-19 | 
+		Source: <a href="https://github.com/mhausenblas/hdt-online" target="_blank">GitHub repo</a> |
+		v0.0
+	</div>
+	
+	<div id="ack">
+		<a href="http://deri.ie/" title="Hosted by Digital Enterprise Research Institute (DERI)"><img src="img/deri-logo.png" alt="DERI" /></a>
+	</div>
+
+	<script src="jquery-1.7.2.min.js"></script>
+	<script src="json2.js"></script>
+	<script src="hdt-online.js"></script>
+</body>
+</html>

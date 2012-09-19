@@ -2,7 +2,7 @@ var SERVICE_BASE_URI = window.location.href;
 var CONVERT_PATH = "convert";
 
 $(document).ready(function(){
-	$("#inputdoc").val(SERVICE_BASE_URI + 'test/mini.nt');
+	
 	$("#convert").click(function(event){
 		convert();
 	});
@@ -31,7 +31,9 @@ function convert() {
 		dataType : "json",
 		success: function(d){
 			if(d) {
-				$("#out").html("<p>The converted document is now available at:</p><p style='text-align: center'><a href='" + d.outputlocation +"' target='_blank'>" +d.outputlocation + "</a></p>");
+				$("#out").html("<p>The converted document is now available at:</p>");
+				$("#out").append("<p style='text-align: center; font-size: 120%;'><a href='" + d.outputlocation +"' target='_blank'><img src='img/hdt-logo.png' alt='HDT' /></a></p>");
+				$("#out").append("<p>Note: if you want to explore an HDT file, you might want to download one of the HDT <a href='http://www.rdfhdt.org/download/' target='_blank'>GUI desktop tools</a>.</p>");
 				console.log(d);
 				$("#results").slideDown('200');
 			}

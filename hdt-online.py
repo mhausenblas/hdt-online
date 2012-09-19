@@ -13,7 +13,7 @@ from BaseHTTPServer import BaseHTTPRequestHandler
 # Configuration
 DEBUG = True
 SERVICE_BASE = 'localhost'
-SERVICE_PORT = 6969
+SERVICE_PORT = 6970
 HDT_PATH = '/Users/michael/Documents/dev/hdt/hdt-java/'
 DATA_DIR = 'data/'
 
@@ -38,8 +38,8 @@ class HDTOnlineServer(BaseHTTPRequestHandler):
 		target_url = parsed_path.path[1:]
 		
 		# API calls
-		if self.path.startswith('/q/'):
-			self.serve_paste(self.path.split('/')[-1])
+		if self.path.startswith('/data/'):
+			self.serve_content(target_url, media_type='application/octet-stream') # ask Mario re correct media type
 		# static stuff (for standalone mode - typically served by Apache or nginx)
 		elif self.path == '/':
 			self.serve_content('index.html')
@@ -94,7 +94,7 @@ class HDTOnlineServer(BaseHTTPRequestHandler):
 			self.send_response(200)
 			self.send_header('Content-type', 'application/json')
 			self.end_headers()
-			self.wfile.write(json.dumps({ 'outputlocation' : os.path.join(DATA_DIR, outputdoc) }))
+			self.wfile.write(json.dumps({ 'outputlocation' : outputdoc }))
 		else:
 			self.send_error(404,'File Not Found: %s' % target_url)
 		return

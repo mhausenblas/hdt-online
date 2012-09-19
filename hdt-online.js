@@ -1,8 +1,8 @@
 var SERVICE_BASE_URI = window.location.href;
-var SERVICE_PORT = 6969;
 var CONVERT_PATH = "convert";
 
 $(document).ready(function(){
+	$("#inputdoc").val(SERVICE_BASE_URI + 'test/mini.nt');
 	$("#convert").click(function(event){
 		convert();
 	});

@@ -1,0 +1,3 @@
+<http://example.org/#m> <http://schema.org/name> "Michael Hausenblas" .
+<http://example.org/#m> <http://schema.org/url> <http://www.deri.ie/about/team/member/michael_hausenblas/> .
+<http://example.org/#m> <http://schema.org/email> <mailto:michael.hausenblas@gmail.com> .
